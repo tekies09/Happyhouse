@@ -46,23 +46,32 @@
 
 ## 주요화면
 **주요 화면 4컷 미리보기**
+![캡처](/img/result.jpg)
+
 - 자세한 화면 보기는 해당 링크 클릭
 
 ## 기술스택및환경
 
 **기술스택**
+- Backend
+<img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white">
+<img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 
-|직책|이름|역할|
-|------|---|---|
-|팀장|노문택|게시판 , 회원관리 , 데이터 시각화 (차트) , 아파트 API 데이터 가공 |
-|조원|이혜민|카카오 및 구글 API 연동 , 주변 상권 API 데이터 가공 및 활용 |
+-Frontend
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
+<img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
 **개발환경**
 
-|직책|이름|역할|
+|환경|버전|설명|
 |------|---|---|
-|팀장|노문택|게시판 , 회원관리 , 데이터 시각화 (차트) , 아파트 API 데이터 가공 |
-|조원|이혜민|카카오 및 구글 API 연동 , 주변 상권 API 데이터 가공 및 활용 |
+| JAVA | zulu 1.8 | Backend |
+| mybatis | 2.1.3 | Backend |
+| Springboot | 2.6.12 | Backend |
+| MySQL | 8.0.21 | DB |
+| Vue.js | 2.6.12 | Frontend |
 
 ## 레퍼런스
 **레퍼런스**
