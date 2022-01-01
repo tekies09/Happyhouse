@@ -18,7 +18,7 @@
 - 게시판 운영을 통한 회원간의 정보 교류 제공
 
 **산출물**
-- 분석,설계,시험단계의 대한 산출물은 해당 링크로 통해 확인
+- [자세히](https://github.com/tekies09/Happyhouse/tree/main/outputs)
 
 
 ## 일정및팀원
