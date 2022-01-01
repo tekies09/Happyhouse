@@ -49,7 +49,7 @@
   
 ![캡처](https://github.com/tekies09/Happyhouse/blob/main/img/result.JPG)
 
-- 자세한 화면 보기는 해당 링크 클릭
+- [자세히](https://github.com/tekies09/Happyhouse/tree/main/pages)
 
 ## 기술스택및환경
 
