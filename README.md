@@ -34,7 +34,7 @@
 
 ## 설치가이드
 **프론트엔드의 경우만 다음과 같이 Bash 창에서 입력해주면 된다.**
-- 프론트엔드링크 
+- [자세히](https://github.com/tekies09/Happyhouse/tree/main/frontend)
 
 ## 기능리스트
 **메인기능**
@@ -45,8 +45,9 @@
 - 주변 상권 조회
 
 ## 주요화면
-**주요 화면 4컷 미리보기**
-![캡처](/img/result.jpg)
+**주요 화면 4컷 미리보기**  
+  
+![캡처](https://github.com/tekies09/Happyhouse/blob/main/img/result.JPG)
 
 - 자세한 화면 보기는 해당 링크 클릭
 
