@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.VueUserMapper">
+
+
+	<!-- 유저 전체 조회 -->
+	<select id="selectVueUser" resultType="VueUserDto">
+		select userno, userid, username, jointime
+ 		from vueuser 
+ 		where userno != 1;
+	</select>
+	
+	<!-- 유저 로그인 -->
+	<select id="login" parameterType="map" resultType="VueUserDto">
+		select userid, username, useremail, userage, usersex, jointime
+		from Vueuser
+		where userid = #{userId} and userpassword = #{userPassword}
+	</select>
+	
+	<!-- 유저 아이디 중복체크 -->
+	<select id="idCheck" parameterType="string" resultType="int">
+		select count(userid)
+		from Vueuser
+		where userid = #{userId}
+	</select>
+
+	<!-- 유저 회원가입  -->
+	<insert id="JoinVueUser" parameterType="VueUserDto">
+		insert into Vueuser (userid, userpassword, username, useremail, userage, usersex, jointime)
+		values (#{userId}, #{userPassword}, #{userName}, #{userEmail}, #{userAge}, #{userSex}, now())
+	</insert>
+
+	<!-- Id 로 유저검색   -->
+	<select id="getVueUser" parameterType="map" resultType="VueUserDto">
+		select userid, userpassword, username, useremail, userage, usersex, jointime
+		from Vueuser
+		where userid = #{userId}
+	</select>
+
+	<!-- 회원 정보 수정   -->
+	<update id="updateVueUser" parameterType="VueUserDto">
+		update Vueuser
+		   set userpassword = #{userPassword},
+		   	   username = #{userName}, 
+		   	   useremail = #{userEmail}, 
+		   	   userage = #{userAge},
+		   	   usersex = #{userSex}
+		where userid = #{userId}
+	</update>
+	<!-- 회원 정보 삭제   -->
+	<delete id="deleteVueUser" parameterType="String">
+		delete from Vueuser
+		where userid = #{userId}
+	</delete>
+	
+	<!-- 유저age컬럼조회   -->
+	<select id="selectVueUserAgeColumn" resultType="String">
+		select concat(SUBSTRING(userage,1,1),'0대') as usercolumn 
+		from vueuser
+		group by userColumn;
+	</select>
+	
+	<!-- 유저age컬럼값 조회   -->
+	<select id="selectVueUserAgeCount" resultType="Integer">
+		select count(*) as usercount 
+		from vueuser
+		group by SUBSTRING(userage,1,1);
+	</select>
+	
+	<!-- 유저jointime컬럼조회   -->
+	<select id="selectVueJointimeColumn" resultType="String">
+		select month(jointime) as  usercolumn  
+		from vueuser
+		group by  usercolumn
+		order by month(jointime);
+ 
+	</select>
+	
+	<!-- 유저jointime컬럼값 조회   -->
+	<select id="selectVueJointimeCount" resultType="Integer">
+		select  count(*) as usercount 
+		from vueuser
+		group by  month(jointime)
+		order by month(jointime);
+	</select>
+	
+		<!-- 유저email컬럼조회   -->
+	<select id="selectVueUserEmailColumn" resultType="String">
+		select substring_index(useremail,'@',-1) as  usercolumn 
+		from vueuser
+		group by  usercolumn;
+	</select>
+	
+	<!-- 유저email컬럼값 조회   -->
+	<select id="selectVueUserEmailCount" resultType="Integer">
+		select count(*) as usercount 
+		from vueuser
+		group by  substring_index(useremail,'@',-1);
+	</select>
+	
+	<!-- 유저sex컬럼조회   -->
+	<select id="selectVueUserSexColumn" resultType="String">
+		select usersex as  usercolumn 
+		from vueuser
+		group by  usercolumn;
+	</select>
+	
+	<!-- 유저sex컬럼값 조회   -->
+	<select id="selectVueUserSexCount" resultType="Integer">
+		select count(*) as usercount 
+		from vueuser
+		group by  usersex;
+	</select>
+	
+	<!-- 유저 비밀번호 조회-->
+	<select id="selectpw" parameterType="String" resultType="String">
+		select userpassword
+		from Vueuser
+		where userid = #{userId} and useremail = #{userEmail};
+	</select>
+	
+</mapper>
